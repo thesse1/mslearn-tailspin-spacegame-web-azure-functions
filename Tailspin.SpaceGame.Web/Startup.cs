@@ -34,7 +34,7 @@ namespace TailSpin.SpaceGame.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddSingleton<ILeaderboardServiceClient>(new LeaderboardFunctionClient(this.Configuration.GetSection("AppSettings").GetValue(typeof(string), "LeaderboardFunctionUrl").ToString()));
+            services.AddSingleton<ILeaderboardServiceClient>(new LeaderboardFunctionClient("http://tailspin-space-game-leaderboard-32418.azurewebsites.net/api/LeaderboardFunction"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
